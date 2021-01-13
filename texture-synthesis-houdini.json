@@ -1,0 +1,22 @@
+{
+    "env" : 
+	[
+		{
+			"texture_synthesis_houdini" : "/path/to/this/repo"
+		},
+		{
+			"texture_synthesis_executable" : 
+			[
+				{
+					"houdini_os == 'windows'" : "$texture_synthesis_houdini/bin/texture-synthesis.exe"
+				},
+				{
+					"houdini_os != 'windows'" : "$texture_synthesis_houdini/bin/texture-synthesis"
+				}
+			]
+		},
+		{
+			"HOUDINI_PATH" : "$texture_synthesis_houdini"
+		}
+	]
+}

@@ -1,0 +1,3 @@
+[submodule "texture-synthesis"]
+	path = texture-synthesis
+	url = git@github.com:EmbarkStudios/texture-synthesis.git
