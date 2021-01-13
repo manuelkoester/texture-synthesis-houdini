@@ -25,17 +25,20 @@ Houdini 18.5+
 
 ## Installation
 1. Get texture-synthesis-houdini
+Either clone this with submodules 
+   - To include the **image examples** as well as the **rust source code** provided by Embark either:
+     - Clone this repository with its submodules
 
-   - Preferably clone this with submodules to include the **rust source code** as well as the **image examples** provided by Embark.
+        `git clone https://github.com/manuelkoester/texture-synthesis-houdini.git --recurse-submodules`
 
-        `git clone --recurse-submodules`
+      - Or download the **Source Code** of the latest releases from [texture-synthesis-houdini](https://github.com/manuelkoester/texture-synthesis-houdini/releases) and [texture-synthesis](https://github.com/EmbarkStudios/texture-synthesis/releases). Unpack both contents to disk and place texture-synthesis inside texture-synthesis-houdini.
 
     - If both are unneeded you can simply download this repository and unpack the contents to a preferred path on your system.
 
 2. Get texture-synthesis executable
 
    - Go to the [releases page of texture-synthesis](https://github.com/EmbarkStudios/texture-synthesis/releases) and download the latest release for your system
-   - Extract the executable file to the [bin](https://github.com/fatboYY/texture-synthesis-houdini/tree/main/bin) folder
+   - Extract the executable file to the bin folder of texture-synthesis-houdini.
 
 3. Add texture-synthesis-houdini to your Houdini Environment
 
