@@ -94,8 +94,9 @@ jobs:
           #     strip "texture-synthesis/target/${{ matrix.target }}/release/${{ matrix.bin }}"
           # fi
 
-          # cp -r !($release_name) $release_name
-          find . ! -regex ".*/$release_name" ! -regex '.' -exec cp -r '{}' "$release_name" \;
+          shopt -s extglob
+          cp -r !($release_name) $release_name
+          # find . ! -regex ".*/$release_name" ! -regex '.' -exec cp -r '{}' "$release_name" \;
 
           # Archive in .zip for Windows, .tar.gz for other platforms
           if [ "${{ matrix.os }}" == "windows-latest" ]; then
