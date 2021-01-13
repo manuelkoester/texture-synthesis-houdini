@@ -65,7 +65,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: fetch
-          args: --target ${{ matrix.target }}
+          args: --manifest-path texture-synthesis/cli/Cargo.toml --target ${{ matrix.target }}
       - name: Release build
         uses: actions-rs/cargo@v1
         with:
