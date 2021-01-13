@@ -1,5 +1,9 @@
 # 🎨 texture-synthesis-houdini
 
+[![Twitter](https://img.shields.io/badge/Twitter-@ShadesOfOrange__-00acee?logo=twitter&logoColor=white)](https://twitter.com/ShadesOfOrange_)
+[![Website](https://img.shields.io/badge/Website-shadesoforange.de-FF4713?logo=Houdini&logoColor=white)](https://shadesoforange.de)
+[![texture-synthesis](https://img.shields.io/badge/Github-texture--synthesis-0e1120?logo=github&logoColor=white)](https://github.com/EmbarkStudios/texture-synthesis)
+
 Houdini / PDG plugin for EmbarkStudios' [texture-synthesis](https://github.com/EmbarkStudios/texture-synthesis).
 
 It uses the CLI of the compiled executable and inherits all of its goodies.
