@@ -53,4 +53,5 @@ To read more on configuration, see the [documentation on Packages](https://www.s
 I reccommend taking a look at the example hipfile I've included at [texture_synthesis_houdini/hip/texture-synthesis_examples_01.hip](https://github.com/fatboYY/texture-synthesis-houdini/blob/main/texture-synthesis_examples_01.hip).  
 Make sure you either cloned the repository with its submodules (see Installation step 1) or additionally downloaded and extracted the texture-synthesis source into texture-synthesis-houdini.
 
+![](docs/implementation01.png)
 ![](docs/ui01.png)
