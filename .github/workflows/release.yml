@@ -26,7 +26,8 @@ jobs:
     name: Release
     strategy:
         matrix:
-          os: [ubuntu-latest, macOS-latest, windows-latest]
+          #os: [ubuntu-latest, macOS-latest, windows-latest]
+          os: [ ubuntu-latest]
           include:
             - os: ubuntu-latest
               rust: stable
