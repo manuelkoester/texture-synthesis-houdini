@@ -35,16 +35,16 @@ jobs:
               # We don't enable the progress feature when targeting
               # musl since there are some dependencies on shared libs
               features: ""
-            - os: windows-latest
-              rust: stable
-              target: x86_64-pc-windows-msvc
-              bin: texture-synthesis.exe
-              features: --features=progress
-            - os: macOS-latest
-              rust: stable
-              target: x86_64-apple-darwin
-              bin: texture-synthesis
-              features: --features=progress
+            # - os: windows-latest
+            #   rust: stable
+            #   target: x86_64-pc-windows-msvc
+            #   bin: texture-synthesis.exe
+            #   features: --features=progress
+            # - os: macOS-latest
+            #   rust: stable
+            #   target: x86_64-apple-darwin
+            #   bin: texture-synthesis
+            #   features: --features=progress
     runs-on: ${{ matrix.os }}
     steps:
       - name: Install stable toolchain
@@ -76,7 +76,7 @@ jobs:
         run: |
           name=texture-synthesis-houdini
           tag=$(git describe --tags --abbrev=0)
-          release_name="$name-$tag-${{ matrix.target }}"
+          release_name="${{ github.event.inputs.major }}.${{ github.event.inputs.minor }}.${{ github.event.inputs.fix }}"
 
           # Archive in .zip for Windows, .tar.gz for other platforms
           if [ "${{ matrix.os }}" == "windows-latest" ]; then
@@ -87,11 +87,10 @@ jobs:
           mkdir "$release_name"
 
           if [ "${{ matrix.target }}" != "x86_64-pc-windows-msvc" ]; then
-              strip "target/${{ matrix.target }}/release/${{ matrix.bin }}"
+              strip "texture-synthesis/target/${{ matrix.target }}/release/${{ matrix.bin }}"
           fi
 
-          cp "target/${{ matrix.target }}/release/${{ matrix.bin }}" "$release_name/"
-          cp README.md LICENSE-APACHE LICENSE-MIT "$release_name/"
+          cp -r !("$release_name") new_subdir
 
           # Archive in .zip for Windows, .tar.gz for other platforms
           if [ "${{ matrix.os }}" == "windows-latest" ]; then
