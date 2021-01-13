@@ -90,11 +90,11 @@ jobs:
           fi
           mkdir "$release_name"
 
-          # if [ "${{ matrix.target }}" != "x86_64-pc-windows-msvc" ]; then
-          #     strip "texture-synthesis/target/${{ matrix.target }}/release/${{ matrix.bin }}"
-          # fi
-          # cp "texture-synthesis/target/${{ matrix.target }}/release/${{ matrix.bin }}" "$release_name/"
-          # rm -rf texture-synthesis/target
+          if [ "${{ matrix.target }}" != "x86_64-pc-windows-msvc" ]; then
+              strip "texture-synthesis/target/${{ matrix.target }}/release/${{ matrix.bin }}"
+          fi
+          cp "texture-synthesis/target/${{ matrix.target }}/release/${{ matrix.bin }}" "$release_name/"
+          rm -rf texture-synthesis/target
 
           shopt -s extglob
           cp -r !($release_name) $release_name
@@ -111,6 +111,8 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           draft: true
-          files: "texture-synthesis-houdini*"
+          files: |
+            "texture-synthesis-houdini*.tar.gz"
+            "texture-synthesis-houdini*.zip"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
