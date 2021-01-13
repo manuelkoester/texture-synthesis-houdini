@@ -4,20 +4,23 @@ name: Release
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
+# on:
+#   workflow_dispatch:
+#     # Inputs the workflow accepts.
+#     inputs:
+#       major:
+#         description: 'Major Version'
+#         required: true
+#       minor:
+#         description: 'Minor Version'
+#         required: true
+#       fix:
+#         description: 'Fix Version'
+#         required: true
 on:
-  workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      major:
-        description: 'Major Version'
-        required: true
-      minor:
-        description: 'Minor Version'
-        required: true
-      fix:
-        description: 'Fix Version'
-        required: true
-
+  push:
+    tags:
+    - '*'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -76,7 +79,7 @@ jobs:
         shell: bash
         run: |
           name=texture-synthesis-houdini
-          tag="${{ github.event.inputs.major }}.${{ github.event.inputs.minor }}.${{ github.event.inputs.fix }}"
+          tag=$(git describe --tags --abbrev=0)
           release_name="$name-$tag-${{ matrix.target }}"
 
           # Archive in .zip for Windows, .tar.gz for other platforms
@@ -104,7 +107,6 @@ jobs:
           rm -r "$release_name"
       - name: Publish
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
           draft: true
           files: "texture-synthesis-houdini*"
