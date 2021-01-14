@@ -94,6 +94,7 @@ jobs:
           #rm -r texture-synthesis/target
           cp "texture-synthesis/LICENSE-MIT" "$release_name"
 
+
           shopt -s extglob
           cp -r !($release_name) $release_name
 
