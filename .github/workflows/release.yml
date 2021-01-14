@@ -96,8 +96,8 @@ jobs:
 
           #cp "texture-synthesis/target/${{ matrix.target }}/release/${{ matrix.bin }}" "$release_name"
           #rm -r texture-synthesis/target
-          ll
           ls
+          ls -l
           cp "texture-synthesis/LICENSE-MIT" "$release_name/bin"
 
           shopt -s extglob
