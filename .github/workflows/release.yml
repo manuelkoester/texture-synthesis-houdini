@@ -107,7 +107,7 @@ jobs:
             tar czvf "$release_archive" "$release_name"
           fi
 
-          rm -r "$release_name"
+          rm -r !("$release_archive")
       - name: Publish
         uses: softprops/action-gh-release@v1
         with:
