@@ -74,7 +74,8 @@ jobs:
               strip "texture-synthesis/target/${{ matrix.target }}/release/${{ matrix.bin }}"
           fi
 
-          mv "texture-synthesis/target/${{ matrix.target }}/release/${{ matrix.bin }}" bin
+          mkdir texture-synthesis/bin
+          mv "texture-synthesis/target/${{ matrix.target }}/release/${{ matrix.bin }}" texture-synthesis/bin
           rm -r texture-synthesis/target
 
           shopt -s extglob

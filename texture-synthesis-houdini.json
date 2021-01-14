@@ -8,10 +8,10 @@
 			"texture_synthesis_executable" : 
 			[
 				{
-					"houdini_os == 'windows'" : "$texture_synthesis_houdini/bin/texture-synthesis.exe"
+					"houdini_os == 'windows'" : "$texture_synthesis_houdini/texture_synthesis/bin/texture-synthesis.exe"
 				},
 				{
-					"houdini_os != 'windows'" : "$texture_synthesis_houdini/bin/texture-synthesis"
+					"houdini_os != 'windows'" : "$texture_synthesis_houdini/texture_synthesis/bin/texture-synthesis"
 				}
 			]
 		},
