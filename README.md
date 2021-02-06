@@ -6,7 +6,11 @@
 
 Houdini / PDG plugin for EmbarkStudios' [texture-synthesis](https://github.com/EmbarkStudios/texture-synthesis).
 
-It uses the CLI of the compiled executable and inherits all of its goodies.
+![](docs/texture-synthesis-examples.png)
+
+
+## Features
+### **texture-synthesis features** 
 
 - Single example generation
 - Multi example generation
@@ -18,7 +22,17 @@ It uses the CLI of the compiled executable and inherits all of its goodies.
 - Repeat texture synthesis transform on a new image
 - Combining texture synthesis 'verbs'
 
-![](docs/implementation01.png)
+
+![](docs/texture-synthesis-ui.png)
+
+
+### **attribute-from-example.hda**
+texture-synthesis-houdini provides you with an otl to export point attributes as texture. This makes it really easy to use attributes as masks within texture-synthesis.
+
+
+![](docs/texture-from-attribute-ui.png)
+
+
 
 ## Requirements
 Houdini 18.5+
@@ -58,8 +72,20 @@ To read more on configuration, see the [documentation on Packages](https://www.s
 
 ## Getting Started
 
-I reccommend taking a look at the example hipfile I've included at [texture_synthesis_houdini/hip/texture-synthesis_examples_01.hip](https://github.com/fatboYY/texture-synthesis-houdini/blob/main/texture-synthesis_examples_01.hip).  
+I reccommend taking a look at the example hipfiles I've included at [texture_synthesis_houdini/hip](https://github.com/manuelkoester/texture-synthesis-houdini/tree/master/hip).
+
 Make sure you either cloned the repository with its submodules (see Installation step 1) or additionally downloaded and extracted the texture-synthesis source into texture-synthesis-houdini.
 
-![](docs/implementation01.png)
-![](docs/ui01.png)
+### **texture-synthesis_examples.hip**
+This replicates all the exmples from the [texture-synthesis repository](ttps://github.com/EmbarkStudios/texture-synthesis).
+
+
+![](docs/texture-synthesis-examples.png)
+
+### **texture-synthesis_attribute_example.hip**
+This showcases how you can use attributes on your geometry to drive your texture-synthesis operations.
+
+
+![](docs/texture-synthesis_attribute_example.png)
+![](docs/texture-synthesis_attribute_example.gif)
+
