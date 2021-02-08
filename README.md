@@ -6,7 +6,7 @@
 
 Houdini / PDG plugin for EmbarkStudios' [texture-synthesis](https://github.com/EmbarkStudios/texture-synthesis).
 
-![](docs/texture-synthesis-examples.png)
+![](docs/texture-synthesis_examples.png)
 
 
 ## Features
@@ -23,19 +23,19 @@ Houdini / PDG plugin for EmbarkStudios' [texture-synthesis](https://github.com/E
 - Combining texture synthesis 'verbs'
 
 
-![](docs/texture-synthesis-ui.png)
+![](docs/texture-synthesis_ui.png)
 
 
 ### **attribute-from-example.hda**
 texture-synthesis-houdini provides you with an otl to export point attributes as texture. This makes it really easy to use attributes as masks within texture-synthesis.
 
 
-![](docs/texture-from-attribute-ui.png)
+![](docs/texture-from-attribute_ui.png)
 
 
 
 ## Requirements
-Houdini 18.5+
+Houdini 18.5+ (18.5.462+ recommended)
 
 ## Installation
 1. Get texture-synthesis-houdini including texture-synthesis with its executable
@@ -76,16 +76,36 @@ I reccommend taking a look at the example hipfiles I've included at [texture_syn
 
 Make sure you either cloned the repository with its submodules (see Installation step 1) or additionally downloaded and extracted the texture-synthesis source into texture-synthesis-houdini.
 
+Prior PDG knowledge is recommended. 
+
+TIP: If you are cooking the `open_in_mplay` nodes and they won't stop cooking; it is usually because you have not closed mplay yet and Houdini thinks it's still executing the Work Item.
+
 ### **texture-synthesis_examples.hip**
 This replicates all the exmples from the [texture-synthesis repository](ttps://github.com/EmbarkStudios/texture-synthesis).
 
+To see test it yourself cook either the `open_in_mplay_single` or `open_in_mplay_all` node at `/obj/geo/topnet`. The `_single` version only cooks one feature, while the `_all` version cooks all features and previews them in mplay for you.
 
-![](docs/texture-synthesis-examples.png)
+![](docs/texture-synthesis_examples.png)
+
 
 ### **texture-synthesis_attribute_example.hip**
 This showcases how you can use attributes on your geometry to drive your texture-synthesis operations.
 
+It uses the painted attribute `mask` from the Attribute Paint node in the `texture_from_attribute` node within the TOP network.
+
+To see test it yourself cook the `open_in_mplay` node for your OS at `/obj/geo/topnet`. Afterwards click on the different dots of the `texture_synthesis` which will load the differently seeded outputs on top of the grid. (See preview below)
 
 ![](docs/texture-synthesis_attribute_example.png)
 ![](docs/texture-synthesis_attribute_example.gif)
 
+
+### **texture-synthesis_pighead.hip**
+Were you ever saddened as much as me that our beloved Pighead never got as much love as it should have gotten? The people at SideFX didn't even bother to give it a Texture for its "neck". Time to fix it the Houdini way!
+
+We can generate a new UV set for its neck and start creating a fully procedural texture for it.
+It uses a painted mask to sample "Pig-like" texture parts to generate a fully new texture from it.
+
+To see test it yourself cook the `open_in_mplay` node for your OS at `/obj/geo/topnet`. Afterwards click on the different dots of the `texture_synthesis` which will load the differently seeded outputs into the `preview_new_texture` node and give our piggies' neck some new 🎨; the procedural way :)
+
+![](docs/pighead.gif)
+![](docs/pighead_settings.png)
