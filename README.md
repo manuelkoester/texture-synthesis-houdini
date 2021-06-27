@@ -2,9 +2,12 @@
 
 [![Twitter](https://img.shields.io/badge/Twitter-@ShadesOfOrange__-00acee?logo=twitter&logoColor=white)](https://twitter.com/ShadesOfOrange_)
 [![Website](https://img.shields.io/badge/Website-shadesoforange.de-FF4713?logo=Houdini&logoColor=white)](https://shadesoforange.de)
+[![Blog Post](https://img.shields.io/badge/Blog_Post-shadesoforange.de-FF4713?logo=Houdini&logoColor=white)](https://shadesoforange.de/texture-synthesis-houdini/)
 [![texture-synthesis](https://img.shields.io/badge/Github-texture--synthesis-0e1120?logo=github&logoColor=white)](https://github.com/EmbarkStudios/texture-synthesis)
 
 Houdini / PDG plugin for EmbarkStudios' [texture-synthesis](https://github.com/EmbarkStudios/texture-synthesis).
+
+Blog Post that goes into more depth can be found on my [website](https://shadesoforange.de/texture-synthesis-houdini/).
 
 ![](docs/texture-synthesis_examples.png)
 
@@ -109,3 +112,10 @@ To see test it yourself cook the `open_in_mplay` node for your OS at `/obj/geo/t
 
 ![](docs/pighead.gif)
 ![](docs/pighead_settings.png)
+
+
+### **texture-synthesis_tile_pbr.hip**
+You can also easily tile PBR textures. It makes the diffuse map tileable and uses the transformations of the diffuse map to apply them to all other maps.
+
+![](docs/tile_pbr.gif) 
+![](docs/tile_pbr_pdg_process.gif)
